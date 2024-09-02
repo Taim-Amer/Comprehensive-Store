@@ -4,9 +4,7 @@ import 'package:t_store/common/widgets/custom_shapes/curved_edges/curved_edges_w
 import 'package:t_store/utils/constants/colors.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
-  const TPrimaryHeaderContainer({
-    super.key, required this.child,
-  });
+  const TPrimaryHeaderContainer({super.key, required this.child,});
 
   final Widget child;
 
