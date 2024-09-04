@@ -30,6 +30,11 @@ class TImages {
   static const String promoBanner3 = "assets/images/banners/banner5.jfif";
   static const String promoBanner4 = "assets/images/banners/banner6.jpg";
   static const String promoBanner5 = "assets/images/banners/banner7.jpg";
+  static const String promoBanner6 = "assets/images/banners/banner11.jpg";
+  static const String promoBanner7 = "assets/images/banners/banner12.jpg";
+
+  // Products
+  static const String productImage1 = "assets/images/products/product1.png";
 
   // Animations
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.png";

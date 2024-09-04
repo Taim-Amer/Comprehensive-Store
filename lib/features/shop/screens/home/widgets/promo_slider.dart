@@ -29,7 +29,7 @@ class TPromoSlider extends StatelessWidget {
           child: Obx(() => Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-                  for(int i=0 ; i<5 ; i++) TCircularContainer(
+                  for(int i=0 ; i<2 ; i++) TCircularContainer(
                     width: 25,
                     height: 4,
                     backgroundColor: controller.carouselCurrentIndex.value == i ? TColors.primary : TColors.grey,
