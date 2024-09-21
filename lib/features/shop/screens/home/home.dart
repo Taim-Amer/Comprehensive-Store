@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                             "Cosmetics Category",
                             "animals Category",
                             "toys Category",
-                            "furnitures Category",
+                            "furniture Category",
                             "Jeweleries Category",
                             "electronics Category",
                           ],
@@ -79,6 +79,9 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
+
+                  TSectionHeading(title: "Popular Products"),
+                  SizedBox(height: TSizes.spaceBtwItems),
                   
                   TGridLayout(
                     itemCount: 4,
