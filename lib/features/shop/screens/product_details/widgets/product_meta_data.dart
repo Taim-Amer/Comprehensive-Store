@@ -10,8 +10,8 @@ import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-class TProductMetaDate extends StatelessWidget {
-  const TProductMetaDate({super.key});
+class TProductMetaData extends StatelessWidget {
+  const TProductMetaData({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,22 +42,9 @@ class TProductMetaDate extends StatelessWidget {
         Row(
           children: [
             const TProductTitleText(title: "Status"),
-            Text("In Stock", style: Theme.of(context).textTheme.titleMedium),
+            Text(" In Stock", style: Theme.of(context).textTheme.titleMedium),
           ],
         ),
-        const SizedBox(width: TSizes.spaceBtwItems / 1.5),
-
-        Row(
-          children: [
-            TCircularImage(
-              width: 32,
-              height: 32,
-              image: TImages.shoeIcon,
-              overlayColor: dark ? TColors.white : TColors.black,
-            ),
-            const TBrandTitleWithVerifiedIcon(title: "Nike", brandTextSize: TextSizes.medium,),
-          ],
-        )
       ],
     );
   }
