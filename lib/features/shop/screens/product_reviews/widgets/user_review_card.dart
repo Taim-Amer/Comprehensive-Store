@@ -22,7 +22,7 @@ class UserReviewCard extends StatelessWidget {
               children: [
                 const CircleAvatar(backgroundImage: AssetImage(TImages.user)),
                 const SizedBox(width: TSizes.spaceBtwItems),
-                Text("Ghandi", style: Theme.of(context).textTheme.titleLarge),
+                Text("Taim Amer", style: Theme.of(context).textTheme.titleLarge),
               ],
             ),
             IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert))
@@ -75,7 +75,9 @@ class UserReviewCard extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
       ],
     );
   }
