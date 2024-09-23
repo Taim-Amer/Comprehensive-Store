@@ -1,9 +1,9 @@
+// ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/device/device_utility.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
 
-// ignore: must_be_immutable
 class TTabBar extends StatelessWidget implements PreferredSizeWidget {
   TTabBar({super.key, required this.tabs});
 
@@ -20,6 +20,7 @@ class TTabBar extends StatelessWidget implements PreferredSizeWidget {
         indicatorColor: TColors.primary,
         labelColor: dark ? TColors.white : TColors.primary,
         unselectedLabelColor: TColors.darkGrey,
+        tabAlignment: TabAlignment.start,
       ),
     );
   }
