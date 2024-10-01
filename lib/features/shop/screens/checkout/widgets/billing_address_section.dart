@@ -26,7 +26,7 @@ class TBillingAddressSection extends StatelessWidget {
           children: [
             const Icon(Icons.location_history, color: Colors.grey, size: 16),
             const SizedBox(width: TSizes.spaceBtwItems),
-            Text("South Liana, Maine 87659, USA", style: Theme.of(context).textTheme.bodyMedium, softWrap: true),
+            Expanded(child: Text("South Liana, Maine 87659, USA", style: Theme.of(context).textTheme.bodyMedium, softWrap: true)),
           ],
         ),
       ],

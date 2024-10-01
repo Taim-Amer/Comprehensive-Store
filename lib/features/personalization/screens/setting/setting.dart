@@ -8,6 +8,7 @@ import 'package:t_store/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
 import 'package:t_store/features/personalization/screens/profile/profile.dart';
 import 'package:t_store/features/shop/screens/address/address.dart';
+import 'package:t_store/features/shop/screens/order/order.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
@@ -38,7 +39,7 @@ class SettingScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems),
                   TSettingMenuTile(icon: Iconsax.safe_home, title: "My Addresses", subTitle: "Set shopping delivery address", onTap: () => Get.to(() => const UserAddressScreen()),),
                   const TSettingMenuTile(icon: Iconsax.shopping_cart, title: "My Cart", subTitle: "Add, remove products and move to checkout"),
-                  const TSettingMenuTile(icon: Iconsax.bag_tick, title: "My Orders", subTitle: "In-progress and complete Orders"),
+                  TSettingMenuTile(icon: Iconsax.bag_tick, title: "My Orders", subTitle: "In-progress and complete Orders", onTap: () => Get.to(() => const OrderScreen())),
                   const TSettingMenuTile(icon: Iconsax.bank, title: "Bank Account", subTitle: "Withdraw balance to registered bank account"),
                   const TSettingMenuTile(icon: Iconsax.discount_shape, title: "My Coupons", subTitle: "List of all discounted coupons"),
                   const TSettingMenuTile(icon: Iconsax.notification, title: "Notifications", subTitle: "Set any kind of notification message"),
