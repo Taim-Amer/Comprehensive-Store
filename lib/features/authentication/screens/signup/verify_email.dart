@@ -2,6 +2,7 @@ import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:t_store/common/widgets/success_screen/success_screen.dart";
+import "package:t_store/data/repositories/authentication/authentication_repository.dart";
 import "package:t_store/features/authentication/controllers/signup/verify_email_controller.dart";
 import "package:t_store/features/authentication/screens/login/login.dart";
 import "package:t_store/utils/constants/image_strings.dart";
@@ -21,7 +22,7 @@ class VerifyEmailScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(onPressed: () => Get.offAll(() => const LoginScreen( )), icon: const Icon(CupertinoIcons.clear))
+          IconButton(onPressed: () => Get.offAll(() => AuthenticationRepository.instance.logout()), icon: const Icon(CupertinoIcons.clear))
         ],
       ),
       body: SingleChildScrollView(
@@ -49,7 +50,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 onPressed: () => controller.checkEmailVerificationStatus(),
                 child: const Text(TTexts.tContinue),),),
               const SizedBox(height: TSizes.spaceBtwItems,),
-              SizedBox(width: double.infinity, child: TextButton(onPressed: (){}, child: const Text(TTexts.resendEmail),),)
+              SizedBox(width: double.infinity, child: TextButton(onPressed: () => controller.sendEmailVerification(), child: const Text(TTexts.resendEmail),),)
             ],
           ),
         ),

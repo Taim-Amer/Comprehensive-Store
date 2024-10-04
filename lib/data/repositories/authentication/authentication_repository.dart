@@ -5,6 +5,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:t_store/features/authentication/screens/login/login.dart';
 import 'package:t_store/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:get/get.dart';
+import 'package:t_store/features/authentication/screens/signup/verify_email.dart';
+import 'package:t_store/navigation_menu.dart';
 import 'package:t_store/utils/exceptions/firebase_auth_exceptions.dart';
 
 class AuthenticationRepository extends GetxController{
@@ -21,8 +23,17 @@ class AuthenticationRepository extends GetxController{
   }
 
   screenRedirect() async{
-    deviceStorage.writeIfNull("IsFirstTime", true);
-    deviceStorage.read("IsFirstTime") != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(() => const OnboardingScreen());
+    final user = _auth.currentUser;
+    if(user != null){
+      if(user.emailVerified){
+        Get.offAll(() => const NavigationMenu());
+      }else {
+        Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
+      }
+    }else{
+      deviceStorage.writeIfNull("IsFirstTime", true);
+      deviceStorage.read("IsFirstTime") != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(() => const OnboardingScreen());
+    }
   }
 
   ///[EmailAuthentication] - REGISTER
@@ -40,6 +51,18 @@ class AuthenticationRepository extends GetxController{
   Future<void> sendEmailVerification() async{
     try{
       await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch(e){
+      throw TFirebaseAuthExceptions(e.code).message;
+    } catch(e){
+      throw "Something went wrong. Please try again.";
+    }
+  }
+
+  ///[LogoutUser] - LOGOUT
+  Future<void> logout() async{
+    try{
+      await FirebaseAuth.instance.signOut();
+      Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch(e){
       throw TFirebaseAuthExceptions(e.code).message;
     } catch(e){
