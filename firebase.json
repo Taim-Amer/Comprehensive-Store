@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "ecommerceapp-18c7c",
+          "appId": "1:630152691138:android:da4c245198ddc0d3a1aa5b",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "ecommerceapp-18c7c",
+          "configurations": {
+            "android": "1:630152691138:android:da4c245198ddc0d3a1aa5b",
+            "ios": "1:630152691138:ios:30d70d50db0d2392a1aa5b",
+            "macos": "1:630152691138:ios:30d70d50db0d2392a1aa5b",
+            "web": "1:630152691138:web:cd849e1950511980a1aa5b",
+            "windows": "1:630152691138:web:4fc2e6533db9e2bca1aa5b"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "y",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
