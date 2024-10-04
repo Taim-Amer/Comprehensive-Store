@@ -16,7 +16,7 @@ class NetworkManager extends GetxController {
   void onInit() {
     super.onInit();
     _connectivitySubscription = _connectivity.onConnectivityChanged.listen((result) {
-      _updateConnectionStatus(result.first);
+      _updateConnectionStatus(result);
       },
     );
   }
