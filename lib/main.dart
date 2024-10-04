@@ -10,7 +10,7 @@ import 'package:t_store/firebase_options.dart';
 Future<void> main() async{
 
   // Todo: Add Widgets Binding
-  final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();\
+  final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   // Todo: Init Local Storage
   await GetStorage.init();

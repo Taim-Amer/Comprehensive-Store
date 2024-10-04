@@ -45,7 +45,7 @@ class TSignupForm extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwInputField,),
           //Username
           TextFormField(
-            controller: controller.userName,
+            controller: controller.username,
             validator: (value) => TValidator.validateEmptyText("Username", value),
             expands: false,
             decoration: const InputDecoration(labelText: TTexts.username, prefixIcon: Icon(Iconsax.user_edit)),
