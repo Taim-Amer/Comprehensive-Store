@@ -27,13 +27,14 @@ if (flutterVersionName == null) {
 }
 
 android {
+    compileSdkVersion 34 // or your desired version
     namespace = "com.example.t_store"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11 // Change to 17
+        targetCompatibility JavaVersion.VERSION_11 // Change to 17
     }
 
     defaultConfig {
@@ -41,10 +42,14 @@ android {
         applicationId = "com.example.t_store"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = flutter.minSdkVersion
+        minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+    }
+
+    kotlinOptions {
+        jvmTarget = '11' // Change to 17
     }
 
     buildTypes {
