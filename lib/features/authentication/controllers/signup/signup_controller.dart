@@ -52,11 +52,11 @@ class SignupController extends GetxController{
       );
 
       final userRepository = Get.put(UserRepository());
-      userRepository.saveUserRecord(newUser);
+      await userRepository.saveUserRecord(newUser);
       
       TLoaders.successSnackBar(title: "Congratulations", message: "Your account has been created! Verify email to continue");
       
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
 
     }catch(e) {
       TLoaders.errorSnackBar(title: "Oh Snap!", message: e.toString());

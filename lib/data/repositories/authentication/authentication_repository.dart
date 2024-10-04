@@ -25,7 +25,7 @@ class AuthenticationRepository extends GetxController{
     deviceStorage.read("IsFirstTime") != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(() => const OnboardingScreen());
   }
 
-  ///[EmailAuthentication] - Register
+  ///[EmailAuthentication] - REGISTER
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async{
     try {
       return await _auth.createUserWithEmailAndPassword(email: email, password: password);
@@ -35,4 +35,16 @@ class AuthenticationRepository extends GetxController{
       throw "Something went wrong. Please try again.";
     }
   }
+
+  ///[EmailVerification] - MAIL VERIFICATION
+  Future<void> sendEmailVerification() async{
+    try{
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch(e){
+      throw TFirebaseAuthExceptions(e.code).message;
+    } catch(e){
+      throw "Something went wrong. Please try again.";
+    }
+  }
+
 }
